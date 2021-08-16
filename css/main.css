@@ -12,37 +12,63 @@
 .head {
     text-align: center;
     margin-top: 5%;
-    margin-bottom: -20px;
+    margin-bottom: -55px;
     color:white;
-    
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .60em solid white; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.7em; /* Adjust as needed */
+    animation: 
+    typing 6s steps(30, end),
+    blink-caret .20s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 90% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  30% { border-color: white }
 }
 
 
 body{
     font-family: 'Quicksand', sans-serif;
-    background-image: url(https://media.giphy.com/media/1fnu914Z79qQpVi2xZ/giphy.gif);
+    background-image: url(https://media.giphy.com/media/uBTWyINWTrWz6/giphy.gif);
     background-size: cover;
 
 }
 
 .input{
     text-align: center;
+    opacity: 80%;
     margin: 90px 0;
+
 }
 
 
 input[type="text"]{
     height: 50px;
     width: 600px;
-    background: whitesmoke;
+    background: rgba(156, 110, 224, 0.473);
     font-family:'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 20px;
     border: none;
     border-radius: 9px;
     padding: 10px 10px;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color:white;
+}
+
+::placeholder {
+    color: white;
 }
 
 input[type="submit"]{
@@ -53,30 +79,51 @@ input[type="submit"]{
     font-size: 20px;
     border: none;
     border-radius: 9px;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0;
+    border-bottom-left-radius: 3px;
+    border-top-right-radius: 3px;
     font-family: 'Quicksand', sans-serif;
     
-
-}
-
-.display{
-    text-align: center;
-    color:white
     
     
 
 }
+
+
+    
+
 
 .displayinside{
     color:white;
-    font-size: 20px;
+    background-color: rgba(156, 110, 224, 0.473);
     text-align: left;
     margin: auto;
-    width: 26%;
-    left: 100px;
+    width: 50%;
+    left: 0px;
     position:relative;
-    padding: 3px;
+    margin-top: 10%;
+    padding: 10px 100px;
+    border-radius: 30px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height:350px;
     
 
+}
+.inside{
+    font-size: 15px;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+    left: 0px;
+    position:relative;
+    padding: 10px 180px;
+    
+    
+
+}
+
+
+.weathername {
+    text-align: center;
+    width: 100%
 }

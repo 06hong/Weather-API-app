@@ -22,16 +22,16 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&ap
         var lowValue = data['main']['temp_min'];
         var forecastValue = data['main']['feels_like'];
         var humidityValue = data['main']['humidity'];
-        console.log(nameValue)
+        console.log(data)
         
         
         
         //(32K − 273.15) × 9/5 + 32 = -402.1°F convert to F 
 
-        tempValue = parseInt((tempValue - 273.15) * (9/5 + 32));
-        highValue = parseInt((highValue -273.15) * (9/5) + 32);
-        lowValue = parseInt((lowValue - 273.15) * ( 9/5 + 32));
-        forecastValue = parseInt((forecastValue - 273.15)* (9/5 + 32));
+        tempValue = parseInt((tempValue - 273.15) * 9/5 + 32);
+        highValue = parseInt((highValue -273.15) * 9/5 + 32);
+        lowValue = parseInt((lowValue - 273.15) * 9/5 + 32);
+        forecastValue = parseInt((forecastValue - 273.15)* 9/5 + 32);
 
 
 
@@ -51,7 +51,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&ap
         high.innerHTML = 'High:  '+ highValue + ' °F';
         low.innerHTML = 'Low:  '+ lowValue + ' °F';
         forecast.innerHTML ='Forcast:  '+ forecastValue + ' °F';
-        humidity.innerHTML = 'Humidity:  '+ humidityValue + '%' ;
+        humidity.innerHTML = 'Humidity:  '+ humidityValue + ' %' ;
 
     })
 
